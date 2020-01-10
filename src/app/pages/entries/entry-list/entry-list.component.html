@@ -1,0 +1,57 @@
+<nav class="mb-5">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a routerLink="/">Home</a>
+    </li>
+    <li class="breadcrumb-item active">
+      Entries
+    </li>
+  </ol>
+</nav>
+
+<div class="row mb-4">
+  <div class="col-md">
+    <h1 class="h2 border-left pl-2">
+      Entries
+    </h1>
+  </div>
+  <div class="col-md">
+    <button routerLink="new" class="btn btn-success float-right">+ New Entry</button>
+  </div>
+</div>
+
+<table class="table table-hover">
+  <thead>
+    <tr class="bg-primary text-light">
+      <th>Entries</th>
+      <th>Categories</th>
+      <th class="text-right">Value R$</th>
+      <th class="text-center">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let entry of entries">
+      <td>
+        <strong>{{entry.name}}</strong><br>
+        <small class="text-success">{{entry.date}}</small><br>
+        <small *ngIf="entry.description">{{entry.description}}</small>
+      </td>
+      <td>
+        {{entry.category.name}}
+      </td>
+      <td class="text-right">
+        <strong [class.text-success]="entry.kind == 'revenue'" [class.text-danger]="entry.kind == 'expense'">
+          {{entry.amount}}
+        </strong>
+        <br>
+        <span class="badge badge-light">
+          {{entry.paidText}}
+        </span>
+      </td>
+      <td class="text-center">
+        <button [routerLink]="[entry.id, 'edit']" class="btn btn-outline-info btn-sm mr-1">Edit</button>
+        <button (click)="onDeleteEntry(entry)" class="btn btn-outline-danger btn-sm">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
