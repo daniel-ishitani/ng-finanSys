@@ -35,7 +35,7 @@
           <input type="text" class="form-control" id="name" formControlName="name">
 
           <div class="text-danger" *ngIf="categoryForm.get('name').invalid && categoryForm.get('name').touched">
-            <div *ngIf="categoryForm.get('name').errors.required">obrigatory field</div>
+            <div *ngIf="categoryForm.get('name').errors.required">required field</div>
             <div *ngIf="categoryForm.get('name').errors.minlength">must have at least 2 chars</div>
           </div>
         </div>

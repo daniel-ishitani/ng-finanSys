@@ -14,8 +14,8 @@ export class Entry {
   ) {}
 
   static kinds = {
-    expense: 'Despesa',
-    revenue: 'Receita'
+    expense: 'Expense',
+    revenue: 'Revenue'
   };
 
   get paidText(): string {
