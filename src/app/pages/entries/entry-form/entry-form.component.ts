@@ -164,7 +164,7 @@ export class EntryFormComponent implements OnInit, AfterContentChecked {
 
   private loadCategories() {
     this.categoryService.getAll().subscribe(
-      categories => this.categories = categories
+      categories => {this.categories = categories; console.log(categories);}
     );
   }
 
