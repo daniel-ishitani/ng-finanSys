@@ -11,7 +11,7 @@ import { BaseResourceListComponent } from 'src/app/shared/components/base-resour
 export class CategoryListComponent extends BaseResourceListComponent<Category> {
 
   constructor(
-    protected categoryService: CategoryService
+    private categoryService: CategoryService
   ) {
     super(categoryService)
   }

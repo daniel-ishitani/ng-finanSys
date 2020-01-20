@@ -30,7 +30,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let entry of entries">
+    <tr *ngFor="let entry of resources">
       <td>
         <strong>{{entry.name}}</strong><br>
         <small class="text-success">{{entry.date}}</small><br>
@@ -50,7 +50,7 @@
       </td>
       <td class="text-center">
         <button [routerLink]="[entry.id, 'edit']" class="btn btn-outline-info btn-sm mr-1">Edit</button>
-        <button (click)="onDeleteEntry(entry)" class="btn btn-outline-danger btn-sm">Delete</button>
+        <button (click)="onDeleteResource(entry)" class="btn btn-outline-danger btn-sm">Delete</button>
       </td>
     </tr>
   </tbody>
