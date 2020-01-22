@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { RouterModule } from '@angular/router';
+import { PageHeaderComponent } from './page-header/page-header.component';
 
 
 @NgModule({
-  declarations: [BreadcrumbComponent],
+  declarations: [BreadcrumbComponent, PageHeaderComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -16,7 +17,8 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     ReactiveFormsModule,
     BreadcrumbComponent,
-    RouterModule
+    RouterModule,
+    PageHeaderComponent
   ]
 })
 export class SharedModule { }
