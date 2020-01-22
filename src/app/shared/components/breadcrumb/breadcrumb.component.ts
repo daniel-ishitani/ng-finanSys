@@ -6,15 +6,15 @@ interface BreadcrumbItem {
 }
 
 @Component({
-  selector: 'app-bread-crumb',
-  templateUrl: './bread-crumb.component.html',
-  styleUrls: ['./bread-crumb.component.scss']
+  selector: 'app-breadcrumb',
+  templateUrl: './breadcrumb.component.html',
+  styleUrls: ['./breadcrumb.component.scss']
 })
 export class BreadcrumbComponent implements OnInit {
 
   @Input() items: Array<BreadcrumbItem> = [];
 
-  lastItem?(item: BreadcrumbItem) {
+  lastItem(item: BreadcrumbItem) {
     const index = this.items.indexOf(item);
     return index == (this.items.length - 1);
   }

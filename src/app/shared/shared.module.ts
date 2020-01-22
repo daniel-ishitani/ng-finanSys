@@ -2,18 +2,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [BreadcrumbComponent],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   exports: [
     CommonModule,
     ReactiveFormsModule,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    RouterModule
   ]
 })
 export class SharedModule { }
