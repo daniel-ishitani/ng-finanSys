@@ -1,1 +1,87 @@
-<p>reports works!</p>
+<app-breadcrumb
+  [items]="[{text: 'Reports'}]"
+></app-breadcrumb>
+
+<app-page-header
+  page-title="Reports"
+  [show-button]="false"
+></app-page-header>
+
+<div class="card">
+  <div class="card-header">
+    Select month and year to generate the reports
+  </div>
+
+  <div class="card-body">
+    <div class="form-row">
+      <div class="form-group col-md-7">
+        <label for="month">Month</label>
+        <select #month name="month" id="month" class="form-control">
+          <option value="">Select a month</option>
+          <option *ngFor="let month of months" value="month.value">{{month.name}}</option>
+        </select>
+      </div>
+      <div class="form-group col-md-5">
+        <label for="year">Year</label>
+        <select #year name="year" id="year" class="form-control">
+          <option value="">Select a year</option>
+          <option *ngFor="let year of years" value="year.value">{{year.name}}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md text-right">
+        <button type="button" (click)="onGenerateReport()" class="btn btn-primary">
+          Generate reports
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card-deck mt-5 mb-5">
+  <div class="card text-center text-white bg-success">
+    <div class="card-header">
+      Total income
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">
+        123
+      </h3>
+    </div>
+  </div>
+
+  <div class="card text-center text-white bg-danger">
+    <div class="card-header">
+      Total expenses
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">
+        123
+      </h3>
+    </div>
+  </div>
+
+  <div class="card text-center text-white bg-info">
+    <div class="card-header">
+      Leftover
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">
+        123
+      </h3>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="row mt-5 mb-4">
+  <div class="col-md-6">
+    Income chart
+  </div>
+  <div class="col-md-6">
+    Expenses chart
+  </div>
+</div>
