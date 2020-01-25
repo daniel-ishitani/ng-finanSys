@@ -9,7 +9,7 @@
 
 <div class="card">
   <div class="card-header">
-    Select month and year to generate the reports
+    Select a month and a year to generate the reports
   </div>
 
   <div class="card-body">
@@ -18,21 +18,21 @@
         <label for="month">Month</label>
         <select #month name="month" id="month" class="form-control">
           <option value="">Select a month</option>
-          <option *ngFor="let month of months" value="month.value">{{month.name}}</option>
+          <option *ngFor="let month of months" [value]="month.value">{{month.name}}</option>
         </select>
       </div>
       <div class="form-group col-md-5">
         <label for="year">Year</label>
         <select #year name="year" id="year" class="form-control">
           <option value="">Select a year</option>
-          <option *ngFor="let year of years" value="year.value">{{year.name}}</option>
+          <option *ngFor="let year of years" [value]="year.value">{{year.name}}</option>
         </select>
       </div>
     </div>
 
     <div class="form-row">
       <div class="col-md text-right">
-        <button type="button" (click)="onGenerateReport()" class="btn btn-primary">
+        <button type="button" (click)="onGenerateReports()" class="btn btn-primary">
           Generate reports
         </button>
       </div>
@@ -47,7 +47,7 @@
     </div>
     <div class="card-body">
       <h3 class="card-title">
-        123
+        {{incomeTotal}}
       </h3>
     </div>
   </div>
@@ -58,7 +58,7 @@
     </div>
     <div class="card-body">
       <h3 class="card-title">
-        123
+        {{expenseTotal}}
       </h3>
     </div>
   </div>
@@ -69,7 +69,7 @@
     </div>
     <div class="card-body">
       <h3 class="card-title">
-        123
+        {{leftover}}
       </h3>
     </div>
   </div>
@@ -79,9 +79,9 @@
 
 <div class="row mt-5 mb-4">
   <div class="col-md-6">
-    Income chart
+    <p-chart type="bar" [data]="incomeChartData" [options]="chartOptions"></p-chart>
   </div>
   <div class="col-md-6">
-    Expenses chart
+    <p-chart type="bar" [data]="expenseChartData" [options]="chartOptions"></p-chart>
   </div>
 </div>
